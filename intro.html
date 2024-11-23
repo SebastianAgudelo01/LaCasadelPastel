@@ -14,9 +14,9 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f5f2;
-            color: #4a4a4a;
+            font-family: 'Roboto', sans-serif;
+            background-color: #faf3e0;
+            color: #333;
             line-height: 1.6;
         }
 
@@ -25,73 +25,87 @@
             height: auto;
         }
 
+        /* Header with logo */
         header {
+            position: relative;
             background-color: #fdd9d9;
-            color: #4a4a4a;
             text-align: center;
-            padding: 2rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 50px 0;
         }
 
         header .logo {
-            font-size: 2.5rem;
+            background: url('img.jpg') no-repeat center center/contain;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
             font-weight: bold;
-            color: #e16c6c;
-            letter-spacing: 3px;
+            color: #4a4a4a;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #6d6d6d;
+            margin-top: 10px;
+        }
+
+        nav {
+            background: #e16c6c;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
         }
 
         nav ul {
             display: flex;
-            justify-content: center;
-            margin: 1rem 0;
-            list-style: none;
             gap: 2rem;
+            list-style: none;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #4a4a4a;
+            color: #fff;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #e16c6c;
+            color: #fdd9d9;
         }
 
+        /* Hero Section */
         .hero {
-            background: url('hero-bakery.jpg') no-repeat center center/cover;
-            color: #fff;
+            background: rgba(255, 248, 245, 0.9);
             text-align: center;
-            padding: 150px 20px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
+            padding: 100px 20px;
         }
 
         .hero h1 {
             font-size: 3rem;
-            z-index: 2;
-            position: relative;
+            color: #4a4a4a;
             margin-bottom: 1rem;
         }
 
         .hero p {
             font-size: 1.5rem;
-            z-index: 2;
-            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+            padding: 10px 20px;
+            background: #e16c6c;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #c55656;
         }
 
         .section {
@@ -110,10 +124,9 @@
         }
 
         .menu-items {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            justify-content: center;
         }
 
         .menu-item {
@@ -122,7 +135,6 @@
             padding: 1rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 300px;
         }
 
         .menu-item img {
@@ -209,18 +221,21 @@
 </head>
 <body>
     <header>
-        <div class="logo">La Casa del Pastel</div>
-        <nav>
-            <ul>
-                <li><a href="#menu">Menú</a></li>
-                <li><a href="#testimonials">Testimonios</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="logo"></div>
+        <h1>La Casa del Pastel</h1>
+        <p>Donde cada bocado cuenta una historia.</p>
     </header>
+    <nav>
+        <ul>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#testimonials">Testimonios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
     <section class="hero">
         <h1>Bienvenidos a La Casa del Pastel</h1>
-        <p>Los mejores pasteles y panes artesanales de la ciudad.</p>
+        <p>Descubre el verdadero sabor artesanal en cada bocado.</p>
+        <a href="#menu" class="btn">Explorar Menú</a>
     </section>
     <section id="menu" class="section menu">
         <h2>Nuestro Menú</h2>
